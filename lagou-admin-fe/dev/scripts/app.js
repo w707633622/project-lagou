@@ -91,9 +91,31 @@
   !*** ./src/scripts/app.js ***!
   \****************************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const homeTpl = __webpack_require__(/*! ./views/home.html */ \"./src/scripts/views/home.html\");\r\nconst positionTpl = __webpack_require__(/*! ./views/position.html */ \"./src/scripts/views/position.html\");\r\n//这里只是做了一个假的路由,给首页和职业两个li标签添加 link自定义属性,用来连接转换渲染页面\r\n$('.sidebar-menu li[link]')//选择ul标签下的 带link属性的li标签\r\n     .on('click', function(){\r\n    //     switch($(this).attr('link')) {\r\n    //         case 'home.html':\r\n    //             $('.content').html(homeTpl);\r\n    //             break;\r\n    //         case 'position.html':\r\n    //             $('.content').html(positionTpl);\r\n    //             break;\r\n    //     }\r\n     /*$('.content').html($(this).attr('link'));*/ //这一句相当于上面代码\r\n    \r\n     let map = new Map();\r\n     map.set('home.html', homeTpl);\r\n     map.set('position.html', positionTpl);\r\n\r\n     $('.content').html(map.get($(this).attr('link')))\r\n            \r\n    })\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/home.html":
+/*!*************************************!*\
+  !*** ./src/scripts/views/home.html ***!
+  \*************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(111111);\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
+eval("module.exports = \"<div>home</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/home.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/position.html":
+/*!*****************************************!*\
+  !*** ./src/scripts/views/position.html ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div>position</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/position.html?");
 
 /***/ })
 
